@@ -1,0 +1,21 @@
+include ../paths
+div.menu
+    br
+    a.btn.btn-primary.btn-large(href = '/') #{'Strona główna'}
+    p.btn_space
+    p.line
+    if !user
+        a.btn.btn-primary.btn-large(href = '/users/register') Rejestracja
+        p.btn_space
+        a.btn.btn-primary.btn-large(href = '/users/login') Logowanie
+        p.btn_space
+    if user
+        a.btn.btn-primary.btn-large(href = '/products/') #{'Lista Produktów'}
+        p.btn_space
+        a.btn.btn-primary.btn-large(href = '/products/add') Dodaj produkt
+        p.btn_space
+        a.btn.btn-primary.btn-large(href = '/users/logout') #{'Wyloguj'}
+        p.bnt_space
+        if user.admin
+            p.line
+            a.btn.btn-danger.btn-large(href = '/userList/') #{'Uzytkownicy'}

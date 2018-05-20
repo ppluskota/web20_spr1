@@ -1,0 +1,30 @@
+extends ../szablon_base
+block content
+    div
+        if !produkty || !produkty.length
+            div brak produktow
+
+        div.container
+          div.content
+            table.table.table-striped
+              thead
+                tr
+                  th LP
+                  th Kategoria
+                  th Nazwa
+                  th Cena
+                  th Kolor
+                  th 
+                  th 
+              tbody
+                for product, i  in produkty
+                  tr
+                    td #{i + 1}
+                    td #{product.category}
+                    td #{product.name}
+                    td #{product.price}
+                    td #{product.color}
+                    td 
+                      a.btn.btn-primary.btn-info(href = '/products/' + product.id) Edytuj
+                    td 
+                      a.btn.btn-primary.btn-danger(href = '/products/delete/' + product.id) Usuń

@@ -1,0 +1,12 @@
+extends szablon_base
+block content
+    article
+        div.error
+            if( message)
+                h1= message
+            if (error && error.status)
+                code= error.status
+            if(error && error.stack )
+                pre= error.stack
+            if(link)
+                a(href=link) Try Again

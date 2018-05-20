@@ -1,0 +1,11 @@
+extends ../szablon_base
+
+block content
+    .container
+        form(action='/users/login',method='post')
+            div.form-group
+                input#text.form-control(type='text', placeholder='Enter username', name='username')
+            div.form-group
+              input#pwd.form-control(type='password', placeholder='Enter password', name='password')
+            div.form-group
+                input(type='submit', value='Login')

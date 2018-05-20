@@ -1,0 +1,14 @@
+extends ../szablon_base
+block content
+  .container
+    form( method="POST" action='/products/add' )
+            div.form-group
+              input#category.form-control(type='text', placeholder='Enter category', name='category')
+            div.form-group
+              input#name.form-control(type='text', placeholder='Enter name', name='name')
+            div.form-group
+              input#color.form-control(type='text', placeholder='Enter color' name='color')
+            div.form-group
+              input#price.form-control(type='number',min="0", placeholder='Enter price' name='price')
+            div.form-group
+              input(type='submit', value='Add')

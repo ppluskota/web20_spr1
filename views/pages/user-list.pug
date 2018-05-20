@@ -1,0 +1,27 @@
+extends ../szablon_base
+block content
+    div
+        br
+        h1 Lista uzytkownikow
+        if !users || !users.length
+            div Lista jest pusta ?!
+            
+        div.container
+          div.content
+            table.table.table-striped
+              thead
+                tr
+                  th LP
+                  th Login
+                  th Email
+                  th Typ Uzytkownika
+              tbody
+                for user, i in users
+                  tr
+                    td #{i + 1}
+                    td #{user.username}
+                    td #{user.email}
+                    if user.admin
+                      td Admin
+                    else 
+                      td Zwykly
