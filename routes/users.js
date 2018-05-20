@@ -60,7 +60,7 @@ router.post('/register', urlencodedParser, function (req, res, next) {
         Users.create(data, function (err, doc) {
             if (err) return next(err);
 
-            var link = 'https://morning-tor-49790.herokuapp.com/users/activate/' + doc.id;
+            var link = 'https://hidden-woodland-37811.herokuapp.com/users/activate/' + doc.id;
             var mailOptions = CustomMailer.mailOptions;
             mailOptions.subject = 'Aktywacja konta';
             mailOptions.html = '<a href="' + link + '">Aktywuj konto!</a>';
